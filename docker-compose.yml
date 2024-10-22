@@ -7,7 +7,7 @@ services:
       dockerfile: ./docker/Dockerfile
     container_name: laravel_cicd
     working_dir: /usr/share/nginx/html
-    command: bash -c "composer install --no-dev && cp .env.example .env && php artisan key:generate"
+    # command: bash -c "composer install --no-dev && cp .env.example .env && php artisan key:generate"
     ports:
       - "8000:80"
     volumes:
