@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  laravel_cicd:
+    build: 
+      context: .
+      dockerfile: ./docker/Dockerfile
+    container_name: laravel_cicd
+    working_dir: /usr/share/nginx/html
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/usr/share/nginx/html
+      - ./docker/nginx_log:/var/log/nginx
+      - ./docker/php-fpm/php-fpm.log:/var/log/php-fpm.log
+      - ./docker/config/app.conf:/etc/nginx/conf.d/app.conf     
