@@ -18,7 +18,7 @@ jobs:
         script: |
           cd /home/trinhnguyen/docker/cicd
           echo ${{ secrets.PASSWORD }} | sudo -S git fetch origin
-          sudo git checkout main
-          sudo git pull
-          sudo docker exec -it laravel_cicd sh -c "composer install --no-dev && npm install && npm run build"
+          echo ${{ secrets.PASSWORD }} | sudo -S git checkout main
+          echo ${{ secrets.PASSWORD }} | sudo -S git pull
+          echo ${{ secrets.PASSWORD }} | sudo -S docker exec -it laravel_cicd sh -c "composer install --no-dev && npm install && npm run build"
 
