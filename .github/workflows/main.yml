@@ -16,5 +16,9 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: 24700
         script: |
-          echo 123       
+          cd /home/trinhnguyen/docker/cicd
+          sudo -S git fetch origin
+          sudo -S git checkout main
+          sudo -S git pull
+          sudo -S docker exec -it laravel_cicd sh -c "composer install --no-dev && npm install && npm run build"
 
