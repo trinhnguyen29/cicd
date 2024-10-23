@@ -21,3 +21,4 @@ jobs:
           sudo git checkout main
           sudo git pull
           sudo docker exec -it laravel_cicd sh -c "composer install --no-dev && npm install && npm run build"         
+
